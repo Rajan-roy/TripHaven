@@ -1,0 +1,44 @@
+    <% layout("/layouts/boilerplate") %>
+    <link rel="stylesheet" href="/css/listing_form_custom.css">
+    <div class="d-flex justify-content-center align-items-center"
+      style="min-height: 80vh;
+             background: url('https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1500&q=80') center center/cover no-repeat, linear-gradient(135deg, #e0eafc99 0%, #cfdef399 100%);
+             background-blend-mode: lighten;">
+      <div class="glass-card p-4" style="width: 500px;">
+        <h2 class="text-center mb-4">Create a New Listing</h2>
+        <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input name="listing[title]" id="title" placeholder="Enter title" type="text" class="form-control rounded-pill" required>
+            <div class="valid-feedback">Title looks good!</div>
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="listing[description]" id="description" placeholder="Enter description" class="form-control rounded-4" required></textarea>
+            <div class="valid-feedback">Please enter a short description</div>
+          </div>
+          <div class="mb-3">
+            <label for="image" class="form-label">Upload Listing image</label>
+            <input name="listing[image]" id="image" type="file" class="form-control rounded-pill" required>
+          </div>
+          <div class="row mb-3">
+            <div class="col">
+              <label for="price" class="form-label">Price</label>
+              <input name="listing[price]" id="price" placeholder="enter price" class="form-control rounded-pill" required>
+              <div class="invalid-feedback">Price should be valid</div>
+            </div>
+            <div class="col">
+              <label for="country" class="form-label">Country</label>
+              <input name="listing[country]" id="country" placeholder="enter country" type="text" class="form-control rounded-pill" required>
+              <div class="invalid-feedback">Country name should be valid</div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input name="listing[location]" id="location" placeholder="enter location" type="text" class="form-control rounded-pill" required>
+            <div class="invalid-feedback">Location name should be valid</div>
+          </div>
+          <button class="gradient-btn w-100 mt-3" style="font-weight:bold;">Add</button>
+        </form>
+      </div>
+    </div>
